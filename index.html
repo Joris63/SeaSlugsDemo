@@ -35,7 +35,8 @@
           })
             .then((response) => response.json())
             .then((data) => {
-              $("#prediction-result").text(data.slugName);
+              console.log(data.probabilities)
+              $("#prediction-result").text(data.probabilities[0].label);
             })
             .catch((error) => {
               console.error("Error:", error);
